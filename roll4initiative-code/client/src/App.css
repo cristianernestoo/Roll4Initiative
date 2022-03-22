@@ -1,0 +1,313 @@
+/*Variables here*/
+:root {
+  --debug-color: red;
+  --background-color: #f5f5f5;
+  --primary: #7209b7;
+  /*
+  --font: 'Verdana';
+  --nome-variabile: contenuto;
+  */
+}
+
+
+@keyframes Zoom {
+  0% {
+    transform: scale(0.5);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100%{
+    transform: scale(1);
+  }
+}
+
+@keyframes Zoom2 {
+  0% {
+    transform: scale(0.5) translateY(30vh);
+  }
+  100%{
+    transform: scale(3.5);
+  }
+}
+
+@keyframes LookAtMe {
+  0% {
+    box-shadow: 0 0 0 0 rgba(114, 9, 183,1);
+  }
+  100%{
+    box-shadow: 0 0 0 10px rgba(114, 9, 183,0);
+  }
+}
+
+@keyframes SlideY {
+  0% {
+    transform: scaleY(0);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
+
+@keyframes SlideX {
+  0% {
+    transform: translateX(100vw);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+html{
+  /* TO PREVENT TEXT SELECTION
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+  /* TO PREVENT USER ZOOM */
+  touch-action: manipulation;
+  user-zoom: fixed;
+  -ms-user-zoom: fixed;
+  background-color: var(--background-color);
+  scroll-behavior: smooth;
+  transition: "0.2s";
+}
+
+.animated_zoom{
+  animation: 0.4s cubic-bezier(0.075, 0.82, 0.165, 1) 0s 1 Zoom;
+}
+
+.animated_zoom2{
+  animation: 2s cubic-bezier(0.075, 0.82, 0.165, 1) 0s 1 Zoom2;
+  animation-fill-mode: forwards;
+}
+
+.animated_lookatme{
+  animation: 0.8s ease-in-out 0s 3 LookAtMe;
+  
+}
+
+.animated_slideY{
+  transform-origin: top;
+  animation: 0.2s ease-in-out 0s 1 SlideY;
+}
+
+.animated_slideX{
+  transform-origin: top;
+  animation: 0.2s ease-in-out 0s 1 SlideX;
+}
+
+.debug_grid{
+  z-index: -1;
+  position:absolute;
+  outline-style: dashed;
+  outline-color: var(--debug-color);
+  outline-width: 1px;
+  width:100%;
+  height: max-height;
+  user-select: none;
+}
+
+.debug_grid div {
+  position: static;
+  outline-style: dashed;
+  outline-color: var(--debug-color);
+  outline-width: 1px;
+  opacity: 0.03;
+  user-select: none;
+}
+
+.stickyToBottom {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 1400;
+}
+
+.fab {
+  position: fixed;
+  bottom: 56px;
+  right: 10px;
+  margin: 0;
+  float: right;
+  box-shadow: '5px 5px 0px rgba(0,0,0,0.1)';
+  color:"white";
+}
+
+.info{
+  opacity: 0.35;
+}
+
+.diceCard{
+  height: 12vh;
+}
+
+.invite{
+  outline-width: 2px;
+  outline-style: dashed;
+  outline-color: darkgrey;
+  color: darkgray;
+}
+
+.debugging{
+  outline: dashed 1px var(--debug-color);
+}
+
+.MuiDrawer-paper{
+  width: 80vw;
+  margin-left: 10vw;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  z-index: 1;
+}
+
+.css-i9fmh8-MuiBackdrop-root-MuiModal-backdrop{
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+}
+
+.css-hz1bth-MuiDialog-container{
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+}
+
+.svg-inline--fa.fa-w-20 {
+  margin: 10px;
+  margin-bottom: 4vh;
+}
+
+.centerContent{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.centerContentY{
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  text-align: left;
+}
+
+.centerContentX{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.fixedHeader {
+  overflow: hidden;
+  position: fixed; 
+  top: 0;
+  width: 100%;
+  background-color: #FFFFFF;
+  padding: 1rem 0rem;
+  z-index: 7;
+}
+
+.stepButton {
+  position: inherit;
+  margin-block: 15%;
+  width: 100%; 
+  background-color: #FFFFFF;
+}
+
+.hideScrollbar{
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+}
+.hideScrollbar::-webkit-scrollbar { 
+  display: none;  /* Safari and Chrome */
+}
+
+.css-16j43ii-MuiTreeItem-content
+{
+  border-radius: 8px;
+  padding: 0 !important;
+}
+
+.css-1yjm3b3-MuiTooltip-tooltip{
+  color:"white";
+  background-color:"black";
+  padding: "1px";
+  margin-top:"3px";
+  transform: "scale(1.5)",
+}
+
+.css-sfpo43-MuiBadge-badge {
+  color: "white";
+}
+
+/*********************** PDF READER CSS *************************/
+
+.Example__container__document {
+  margin: 0em 0em;
+  overflow-x: hidden;
+}
+
+.Example__container__document .react-pdf__Document {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+
+.Example__container__document .react-pdf__Page {
+  max-width: calc(100% - 1em);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+  margin-bottom: 0.5em;
+}
+
+.Example__container__document .react-pdf__Page canvas {
+  max-width: 100%;
+  height: auto !important;
+}
+
+.Example__container__document .react-pdf__message {
+  padding: 20px;
+  color: white;
+}
+
+.css-vittj7-MuiPaper-root-MuiAlert-root {
+  border-radius: 20px;
+}
+
+/****************************************************************/
+
+@media screen and (max-width: 300px) {
+  .crownIcon{
+    font-size: 1rem;
+  }
+}
+@media screen and (min-width: 300px) and (max-width: 400px) {
+  .crownIcon{
+    font-size: 1.6rem;
+  }
+}
+@media screen and (min-width: 400px) {
+  .crownIcon{
+    font-size: 2rem;
+  }
+}
+@media screen and (min-width: 700px) {
+  .crownIcon{
+    font-size: 2.1rem;
+  }
+}
+
+@font-face {
+  font-family: 'Title';
+  src: url(./fonts/Kelmscott.woff);
+  /* other formats include: 'woff2', 'truetype, 'opentype',
+                            'embedded-opentype', and 'svg' */
+}
+@media screen and (max-width: 300px) {
+  .runningGames{
+    font-size:x-large;
+  }
+}
+
+
